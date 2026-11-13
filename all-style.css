@@ -1,0 +1,115 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --main-color: #A855F7;
+  --main-color-hover: #4A2C6A;
+  --bg-color: #0D0D0D;
+  --text-color: #FFFFFF;
+  --text-muted: #A1A1AA;
+  --border-dashed: rgba(168, 85, 247, 0.4);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+}
+
+/* Shared DRY Classes */
+.page-section {
+  height: calc(100vh - 71px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-section:not(#home) {
+  border-top: 2px solid var(--main-color);
+  box-shadow: 0 -4px 15px rgba(168, 85, 247, 0.15);
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(circle at center, #141414 0%, #0D0D0D 100%);
+}
+
+.page-footer-num {
+  position: absolute;
+  bottom: 30px;
+  right: 60px;
+  z-index: 2;
+}
+
+.star {
+  position: absolute;
+  filter: drop-shadow(0 0 8px var(--main-color));
+}
+
+/* start nav-bar style */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+}
+
+nav .logo {
+  width: 30px;
+  height: 30px;
+}
+
+nav .logo img {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 5px var(--main-color));
+}
+
+nav .menu-close,
+nav .menu-toggle {
+  display: none;
+}
+
+nav .nav-list {
+  display: flex;
+  gap: 20px;
+}
+
+nav .nav-url {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav .nav-url:hover {
+  color: var(--main-color);
+}
+/* end nav-bar style */
